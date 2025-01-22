@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul id="images">
+            <li><img id="one" style="height: 200px; width: 200px;" src="images.jpg" alt=""></li>
+            <li><img id="two" style="height: 200px; width: 200px;" src="images.jpg" alt=""></li>
+            <li><img id="three" style="height: 200px; width: 200px;" src="images.jpg" alt=""></li>
+            <li><img id="four" style="height: 200px; width: 200px;" src="images.jpg" alt=""></li>
+        </ul>
+    </div>
+<!-- bubling up the event  (down to up side )-->
+    <script>
+        // document.getElementById("images").addEventListener("click", function(e){
+        //     console.log(e)
+        //     console.log("click img");
+            
+        // },false);
+        // document.getElementById("one").addEventListener("click", function(e){
+        //     console.log(e)
+        //     console.log("click one");
+
+        // }),false;
+// capturing the event (up to down side)
+        // document.getElementById("images").addEventListener("click", function(e){
+            // e.preventDefault()
+            // e.stopPropagation();
+
+        //     console.log(e)
+        //     console.log("click img");
+            
+        // },true);
+        // document.getElementById("one").addEventListener("click", function(e){
+        //     console.log(e)
+        //     console.log("click one");
+
+        // }),true;
+        //  document.getElementById("images").addEventListener("click", function(e){
+        //     console.log(e.target.parentNode);
+        //     let removeIt = e.target.parentNode;
+            // removeIt.remove();
+            // removeIt.parentNode.removeChild(removeIt); // its take complete parent
+            
+
+        // }),false;
+
+           document.getElementById("images").addEventListener("click", function(e){
+            console.log(e.target.tagName);
+            if(e.target.tagName == "IMG")
+           {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+           }
+            
+           })
+    </script>
+</body>
+</html>
+
+type, timestamp, defaultPrevented 
+ // target, toElement, srcElement, currentTarget, 
+  // clientX, clienty, screenX, screenY 32 33 34 35 .
+ // altkey, ctrlkey, shiftkey, keyCode
