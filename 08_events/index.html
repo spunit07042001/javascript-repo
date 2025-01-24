@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello Punit</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        // const sayDate = (str) => {
+        //     console.log(str, "Punit",  Date.now());
+        // }
+
+
+        // const interValeId = setInterval(sayDate, 1000, "hi");
+        // clearInterval(interValeId); // prevent
+
+        
+        let intervalId; // Stores the interval ID
+
+        document.getElementById("start").onclick = () => {
+            if (!intervalId) {
+                intervalId = setInterval(() => console.log("Hi Punit", Date.now()), 1000);
+            }
+        };
+
+        document.getElementById("stop").onclick = () => {
+            clearInterval(intervalId);
+            intervalId = undefined;
+        };
+
+    </script>
+</body>
+
+</html>
