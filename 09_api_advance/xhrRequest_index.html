@@ -1,0 +1,77 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api learning </title>
+</head>
+<body style="background-color:#212121; color: white;">
+    
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+
+
+
+<script>
+    const requestURL = 'https://api.github.com/users/spunit07042001'; 
+   const xhr = new XMLHttpRequest();
+   xhr.open('GET', requestURL);
+   xhr.onreadystatechange = function(){
+       console.log(xhr.readyState);
+       if(xhr.readyState === 4){ 
+        const data = JSON.parse(xhr.responseText);
+        console.log(data.avatar_url);
+        console.log(data);}
+
+   }
+   xhr.send();
+//    console.log(xhr.readyState);
+</script>
+</body>
+</html> -->
+
+<!-- create a card using response -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api learning </title>
+</head>
+<body style="background-color:#212121; color: white;">
+    
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+
+    <div id="avatar-container"></div>
+
+<script>
+    const requestURL = 'https://api.github.com/users/spunit07042001'; 
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(xhr.responseText);
+            console.log(data.avatar_url);
+            console.log(data);
+            const avatarContainer = document.getElementById('avatar-container');
+            const img = document.createElement('img');
+            img.src = data.avatar_url;
+            img.alt = 'User Avatar';
+            avatarContainer.appendChild(img);
+        }
+    }
+    xhr.send();
+</script>
+</body>
+</html>
+
+
+<!-- console.log  is a debugger tool in js and run time envirmont  -->
