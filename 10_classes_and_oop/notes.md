@@ -40,3 +40,9 @@ encapsulation == rap up data
 inheritance == 
 polymorphism == one method do multiple things 
 
+
+
+## Magic of Prototype in javascript
+
+array -> object->null
+string  -> object->null 
